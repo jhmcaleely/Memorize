@@ -20,7 +20,7 @@ struct ContentView: View {
         }
         .padding()
         .foregroundColor(.orange)
-        .font(.largeTitle)
+        .font(emojiGame.cards.count > 4 ? .body : .largeTitle)
     }
 }
 
@@ -39,6 +39,7 @@ struct CardView: View {
                 RoundedRectangle(cornerRadius: 10.0).fill()
             }
         }
+        .aspectRatio(CGSize(width: 2, height: 3), contentMode: .fit)
     }
 }
 
