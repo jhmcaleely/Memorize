@@ -12,7 +12,7 @@ struct MemorizeApp: App {
     var body: some Scene {
         WindowGroup {
             let game = EmojiMemoryGame()
-            ContentView(emojiGame: game)
+            EmojiMemoryView(emojiGame: game)
         }
     }
 }
