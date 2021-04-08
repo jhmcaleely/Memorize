@@ -16,6 +16,7 @@
 		D99E499E261BA15F00912985 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D99E499D261BA15F00912985 /* Preview Assets.xcassets */; };
 		D99E49A7261CBEC900912985 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E49A6261CBEC900912985 /* MemoryGame.swift */; };
 		D99E49AA261CC0BB00912985 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E49A9261CC0BB00912985 /* EmojiMemoryGame.swift */; };
+		D9BC60A4261F40C1005C3BB1 /* Array+Only.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC60A3261F40C1005C3BB1 /* Array+Only.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D99E499F261BA15F00912985 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D99E49A6261CBEC900912985 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		D99E49A9261CC0BB00912985 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
+		D9BC60A3261F40C1005C3BB1 /* Array+Only.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Only.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				D994E612261F31410082308D /* Grid.swift */,
 				D99E49A6261CBEC900912985 /* MemoryGame.swift */,
 				D994E615261F34690082308D /* Array+Identifiable.swift */,
+				D9BC60A3261F40C1005C3BB1 /* Array+Only.swift */,
 				D99E49A9261CC0BB00912985 /* EmojiMemoryGame.swift */,
 				D99E499A261BA15F00912985 /* Assets.xcassets */,
 				D99E499F261BA15F00912985 /* Info.plist */,
@@ -160,6 +163,7 @@
 				D99E49AA261CC0BB00912985 /* EmojiMemoryGame.swift in Sources */,
 				D994E619261F354D0082308D /* GridLayout.swift in Sources */,
 				D994E616261F34690082308D /* Array+Identifiable.swift in Sources */,
+				D9BC60A4261F40C1005C3BB1 /* Array+Only.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
