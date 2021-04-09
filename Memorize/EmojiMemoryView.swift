@@ -12,7 +12,7 @@ struct EmojiMemoryView: View {
     
     var body: some View {
         VStack {
-            Text(emojiGame.theme.name)
+            Text("\(emojiGame.theme.name) Score: \(emojiGame.score)")
             Grid(emojiGame.cards) { card in
                 CardView(card: card).onTapGesture {
                     emojiGame.choose(card: card)
