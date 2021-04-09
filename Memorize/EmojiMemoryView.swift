@@ -20,7 +20,7 @@ struct EmojiMemoryView: View {
                 .padding()
             }
             .padding()
-            .foregroundColor(emojiGame.theme.colour)
+            .foregroundColor(emojiGame.theme.color)
             Button("New Game") {
                 emojiGame.newGame()
             }

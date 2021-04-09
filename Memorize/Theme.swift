@@ -6,13 +6,12 @@
 //
 
 import Foundation
-import SwiftUI
 
-struct Theme {
+struct Theme<ColorType> {
     var name: String
     var symbols: String
     var isRandomPreferred: Bool = false
-    var colour: Color
+    var color: ColorType
     
     var maxCardCount: Int {
         symbols.count

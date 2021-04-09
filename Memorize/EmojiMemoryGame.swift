@@ -9,21 +9,21 @@ import SwiftUI
 
 class EmojiMemoryGame: ObservableObject {
     @Published private var game: MemoryGame<String>
-    @Published var theme: Theme
+    @Published var theme: Theme<Color>
     
-    static var themes: [Theme] =
-        [Theme(name: "Halloween", symbols: "👻🎃🕷🕸☃️", isRandomPreferred: true, colour: Color.orange),
-         Theme(name: "Faces", symbols: "😀🥸😍😂😛😇", colour: Color.yellow),
-         Theme(name: "Sports", symbols: "⚽️🏀🏈⚾️🥏🏓", isRandomPreferred: true, colour: Color.green),
-         Theme(name: "Sportswomen", symbols: "🧘🏽‍♀️⛹🏾‍♀️🤺🤸🏾‍♀️🤾🏾‍♀️", colour: Color.black),
-         Theme(name: "Vehicles", symbols: "🚗🚕🚐🏎🚜🚎", colour: Color.gray),
-         Theme(name: "Flags", symbols: "🏳️‍⚧️🏳️‍🌈🇬🇧🇸🇪🇺🇳", colour: Color.red)]
+    static var themes: [Theme<Color>] =
+        [Theme(name: "Halloween", symbols: "👻🎃🕷🕸☃️", isRandomPreferred: true, color: Color.orange),
+         Theme(name: "Faces", symbols: "😀🥸😍😂😛😇", color: Color.yellow),
+         Theme(name: "Sports", symbols: "⚽️🏀🏈⚾️🥏🏓", isRandomPreferred: true, color: Color.green),
+         Theme(name: "Sportswomen", symbols: "🧘🏽‍♀️⛹🏾‍♀️🤺🤸🏾‍♀️🤾🏾‍♀️", color: Color.black),
+         Theme(name: "Vehicles", symbols: "🚗🚕🚐🏎🚜🚎", color: Color.gray),
+         Theme(name: "Flags", symbols: "🏳️‍⚧️🏳️‍🌈🇬🇧🇸🇪🇺🇳", color: Color.red)]
     
-    static func selectTheme() -> Theme {
+    static func selectTheme() -> Theme<Color> {
         themes[Int.random(in: themes.indices)]
     }
     
-    static func createMemoryGame(with theme: Theme) -> MemoryGame<String> {
+    static func createMemoryGame(with theme: Theme<Color>) -> MemoryGame<String> {
         let emojis: Array<String> = theme.symbols.map() { item in String(item) }
         return MemoryGame<String>(numberOfPairsOfCards: theme.chooseCardCount()) { pairIndex in emojis[pairIndex] }
     }
