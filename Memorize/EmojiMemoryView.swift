@@ -11,14 +11,21 @@ struct EmojiMemoryView: View {
     @ObservedObject var emojiGame: EmojiMemoryGame
     
     var body: some View {
-        Grid(emojiGame.cards) { card in
-            CardView(card: card).onTapGesture {
-                emojiGame.choose(card: card)
+        VStack {
+            Text(emojiGame.theme.name)
+            Grid(emojiGame.cards) { card in
+                CardView(card: card).onTapGesture {
+                    emojiGame.choose(card: card)
+                }
+                .padding()
             }
             .padding()
+            .foregroundColor(emojiGame.theme.colour)
+            Button("New Game") {
+                emojiGame.newGame()
+            }
         }
         .padding()
-        .foregroundColor(emojiGame.theme.colour)
     }
 }
 
