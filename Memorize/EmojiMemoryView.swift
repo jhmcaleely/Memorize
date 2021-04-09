@@ -18,7 +18,7 @@ struct EmojiMemoryView: View {
             .padding()
         }
         .padding()
-        .foregroundColor(.orange)
+        .foregroundColor(emojiGame.theme.colour)
     }
 }
 
@@ -49,7 +49,7 @@ struct CardView: View {
     
     let cornerRadius: CGFloat = 10
     let egdeLineWidth: CGFloat = 3
-    let fontScaleFactor: CGFloat = 0.66
+    let fontScaleFactor: CGFloat = 0.55
     
     func fontSize(for size: CGSize) -> CGFloat {
         min(size.width, size.height) * fontScaleFactor

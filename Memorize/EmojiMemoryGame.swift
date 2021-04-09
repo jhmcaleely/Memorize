@@ -8,12 +8,22 @@
 import SwiftUI
 
 class EmojiMemoryGame: ObservableObject {
-    @Published private var game: MemoryGame<String> = createMemoryGame()
+    @Published private var game: MemoryGame<String>
+    var theme: Theme
     
-    static func createMemoryGame() -> MemoryGame<String> {
-        let emojis: Array<String> = ["👻", "🎃", "🕷", "🕸", "☃️"]
-        let pairCount = Int.random(in: 2...emojis.count)
-        return MemoryGame<String>(numberOfPairsOfCards: pairCount) { pairIndex in emojis[pairIndex] }
+    static var themes: [Theme] =
+        [Theme(name: "Halloween", symbols: "👻🎃🕷🕸☃️", isRandomPreferred: true, colour: Color.orange),
+         Theme(name: "Faces", symbols: "😀🥸😍😂😛😇", isRandomPreferred: false, colour: Color.yellow),
+         Theme(name: "Sports", symbols: "⚽️🏀🏈⚾️🥏🏓", isRandomPreferred: true, colour: Color.green),
+         Theme(name: "Sportswomen", symbols: "🧘🏽‍♀️⛹🏾‍♀️🤺🤸🏾‍♀️🤾🏾‍♀️", isRandomPreferred: false, colour: Color.black),
+         Theme(name: "Vehicles", symbols: "🚗🚕🚐🏎🚜🚎", isRandomPreferred: false, colour: Color.gray),
+         Theme(name: "Flags", symbols: "🏳️‍⚧️🏳️‍🌈🇬🇧🇸🇪🇺🇳", isRandomPreferred: false, colour: Color.red)]
+    
+    init() {
+        theme = EmojiMemoryGame.themes[Int.random(in: EmojiMemoryGame.themes.indices)]
+        let emojis: Array<String> = theme.symbols.map() { item in String(item) }
+        let pairCount = theme.isRandomPreferred ? Int.random(in: 2...emojis.count) : emojis.count
+        game = MemoryGame<String>(numberOfPairsOfCards: pairCount) { pairIndex in emojis[pairIndex] }
     }
     
     // MARK: Access to the Model
