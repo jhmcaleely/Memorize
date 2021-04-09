@@ -13,6 +13,7 @@ struct Theme<ColorType> {
     var isRandomPreferred: Bool = false
     var color: ColorType
     
+    let minCardCount = 2
     var maxCardCount: Int {
         symbols.count
     }
@@ -21,6 +22,6 @@ struct Theme<ColorType> {
     }
     
     func chooseCardCount() -> Int {
-        preferredCardCount ?? Int.random(in: 2...maxCardCount)
+        preferredCardCount ?? Int.random(in: minCardCount...maxCardCount)
     }
 }
