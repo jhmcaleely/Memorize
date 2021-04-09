@@ -11,6 +11,17 @@ import SwiftUI
 struct Theme {
     var name: String
     var symbols: String
-    var isRandomPreferred: Bool
+    var isRandomPreferred: Bool = false
     var colour: Color
+    
+    var maxCardCount: Int {
+        symbols.count
+    }
+    var preferredCardCount: Int? {
+        isRandomPreferred ? nil : maxCardCount
+    }
+    
+    func chooseCardCount() -> Int {
+        preferredCardCount ?? Int.random(in: 2...maxCardCount)
+    }
 }
