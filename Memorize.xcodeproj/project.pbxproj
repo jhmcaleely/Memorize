@@ -19,6 +19,7 @@
 		D9BC60A4261F40C1005C3BB1 /* Array+Only.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC60A3261F40C1005C3BB1 /* Array+Only.swift */; };
 		D9BC60A726208700005C3BB1 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC60A626208700005C3BB1 /* Theme.swift */; };
 		D9BC60AA2621CB17005C3BB1 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC60A92621CB17005C3BB1 /* Pie.swift */; };
+		D9BC60AD2621E01D005C3BB1 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC60AC2621E01D005C3BB1 /* Cardify.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		D9BC60A3261F40C1005C3BB1 /* Array+Only.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Only.swift"; sourceTree = "<group>"; };
 		D9BC60A626208700005C3BB1 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		D9BC60A92621CB17005C3BB1 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		D9BC60AC2621E01D005C3BB1 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				D99E4996261BA15D00912985 /* MemorizeApp.swift */,
 				D99E4998261BA15D00912985 /* EmojiMemoryView.swift */,
+				D9BC60AC2621E01D005C3BB1 /* Cardify.swift */,
 				D994E618261F354D0082308D /* GridLayout.swift */,
 				D994E612261F31410082308D /* Grid.swift */,
 				D99E49A6261CBEC900912985 /* MemoryGame.swift */,
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9BC60AD2621E01D005C3BB1 /* Cardify.swift in Sources */,
 				D9BC60AA2621CB17005C3BB1 /* Pie.swift in Sources */,
 				D9BC60A726208700005C3BB1 /* Theme.swift in Sources */,
 				D99E49A7261CBEC900912985 /* MemoryGame.swift in Sources */,
