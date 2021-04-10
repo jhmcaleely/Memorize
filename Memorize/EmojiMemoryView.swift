@@ -15,14 +15,18 @@ struct EmojiMemoryView: View {
             Text("\(emojiGame.theme.name) Score: \(emojiGame.score)")
             Grid(emojiGame.cards) { card in
                 CardView(card: card).onTapGesture {
-                    emojiGame.choose(card: card)
+                    withAnimation(.linear) {
+                        emojiGame.choose(card: card)
+                    }
                 }
                 .padding()
             }
             .padding()
             .foregroundColor(emojiGame.theme.color)
             Button("New Game") {
-                emojiGame.newGame()
+                withAnimation(.easeInOut) {
+                    emojiGame.newGame()
+                }
             }
         }
         .padding()
@@ -32,17 +36,44 @@ struct EmojiMemoryView: View {
 struct CardView: View {
     var card: MemoryGame<Character>.Card
     
+    @State private var animatedBonusRemaining: Double = 0
+    
+    private func startBonusTimeAnimation() {
+        animatedBonusRemaining = card.bonusRemaining
+        withAnimation(.linear(duration: card.bonusTimeRemaining)) {
+            animatedBonusRemaining = 0
+        }
+    }
+    
     var body: some View {
         if card.isFaceUp || !card.isMatched {
             ZStack {
-                Pie(startAngle: Angle(degrees: 0-90),
-                    endAngle: Angle(degrees: 110-90),
-                    clockwise: true)
-                    .padding(progressPadding)
-                    .opacity(progressOpacity)
+                Group {
+                    if card.isConsumingBonusTime {
+                        Pie(startAngle: Angle(degrees: 0-90),
+                            endAngle: Angle(degrees: -animatedBonusRemaining*360-90),
+                            clockwise: true)
+                            .onAppear() {
+                                startBonusTimeAnimation()
+                            }
+                    } else {
+                        Pie(startAngle: Angle(degrees: 0-90),
+                            endAngle: Angle(degrees: -card.bonusRemaining*360-90),
+                            clockwise: true)
+                        
+                    }
+                }
+                .padding(progressPadding)
+                .opacity(progressOpacity)
+                .transition(.scale)
                 Text(String(card.content))
+                    .rotationEffect(Angle(degrees: card.isMatched ? 360 : 0))
+                    .animation(card.isMatched ?
+                                Animation.linear.repeatForever(autoreverses: false)
+                                : .default)
             }
             .cardify(isFaceUp: card.isFaceUp)
+            .transition(.scale)
         }
     }
     
